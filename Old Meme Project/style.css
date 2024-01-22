@@ -1,0 +1,23 @@
+html{
+    background-color: black;
+    font-family: 'Libre Baskerville', serif;
+    color: white;
+}
+#picture{
+    border: 5px antiquewhite solid;
+    width: 100%;
+}
+#meme{
+    margin-top: 10%;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+}
+
+/* I think its funnier without the line below but it is more lore accurate to use the uppercase
+
+#topText{
+    text-transform: uppercase;
+}
+
+*/
