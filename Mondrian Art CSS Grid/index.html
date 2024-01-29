@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mondrian Project</title>
+  <style>
+
+    .mondrian{
+      display: grid;
+      background-color: black;
+      gap: 9px;
+      width: 748px;
+      height: 746px;
+      grid-template-columns: 320px 198px 153px 50px ;
+      grid-template-rows: 414px 130px 155px 20px;
+    }
+    .block{
+      background-color: #F0F1EC;
+      order: 1;
+    }
+    .red{
+      background-color: #E72F24;
+      order: 0;
+    }
+    .white-1{
+      grid-column-end: span 3;
+    }
+    .white-2{
+      grid-row-end: span 2;
+    }
+    .white-3{
+      grid-column-end: span 2;
+      grid-row-end: span 2;
+    }
+    .blue{
+      background-color: #004592;
+      order: 2;
+      border-bottom: black 10px solid;
+    }
+    .white-4{
+      order: 4;
+      grid-row-end: span 2;
+    }
+    .yellow{
+      background-color: #F9D01E;
+      order: 5;
+    }
+    .gray{
+      background-color: #232629;
+      order: 6;
+    }
+    .white-last{
+      order: 5;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="mondrian">
+    <div class="block white-1"></div>
+    <div class="block white-2"></div>
+    <div class="block white-3"></div>
+    <div class="block white-4"></div>
+    <div class="block white-last"></div>
+    <div class="block red"></div>
+    <div class="block blue"></div>
+    <div class="block yellow"></div>
+    <div class="block gray"></div>
+  </div>
+
+</body>
+
+</html>
