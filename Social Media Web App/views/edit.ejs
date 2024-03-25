@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Blog App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div style="font-size: 30px; color: rgb(246, 243, 228); text-shadow:rgba(235, 52, 39, 0.626) 0px 6px 0px;background-color: rgb(84, 164, 166); border-radius: 10%; height: 300px; width: 300px; text-align: center;justify-content: center;">
+    <h1 style="font-family: Oleo Script;">Edit Post</h1>
+    <form action="/edited/<%=theID %>"  method="POST">
+        <input type="text" name="title" placeholder="Enter Title" value="<%=list[theID].title %>">
+        <br>
+        <input type="text" name="body" placeholder="Enter text..." value="<%=list[theID].body %>">
+        <br>
+        <input type="submit" value="Post">
+    </form>
+</div>
+</body>
+</html>

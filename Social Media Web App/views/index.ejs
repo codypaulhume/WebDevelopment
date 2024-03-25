@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Blog App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@100;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+    <div class="create-post">
+        <form action="/submit" method="POST">
+            <input type="text" name="title" placeholder="Enter title..." class="title-text" style="font-family: Oleo Script; font-size: 50px;">
+            <br>
+            <input type="text" name="body" placeholder="Enter text..." class="body-text" style="font-family: Oleo Script; font-size: 25px;">
+            <br>
+            </div>
+            <div class="button-post">
+            <input type="submit" value="Post" style="margin-top: 10px; font-family: Oleo Script; width: 300px; height: 130px; font-size: 80px; background-color:rgb(84, 164, 166); border: none; color: rgb(246, 243, 228); text-shadow:rgba(235, 52, 39, 0.626) 0px 6px 0px;">
+            </div>
+        </form>
+    
+    <div class="post-list">
+        <h1 style="font-family: Oleo Script; font-size: 80px; color: rgb(246, 243, 228); text-shadow:rgba(235, 52, 39, 0.626) 0px 6px 0px; margin: 0;">Feed</h1> 
+        <% if(locals.list){ %>
+            <% for (var i=0; i < list.length; i++) {%>
+                <div class="post-body">
+                    <% console.log(list[i]) %>
+                    <span style="display: block; text-align: left; font-family: Oleo Script;"><h2><%= list[i].title %> </h2></span>
+                    <p style="font-family: Oleo Script;"><%= list[i].body %></p>
+                    <div class="button-delete">
+                    <form action="/delete/<%= i %>" method="DELETE">
+                        <input style="font-family: Oleo Script; background-color: rgb(255, 87, 87);" type="submit" value="Delete" id="<% i %>">
+                    </form>
+                    </div>
+                    <div class="button-edit">
+                    <form action="/edit/<%= i %>" method="DELETE">
+                        <input style="font-family: Oleo Script; background-color: rgb(126, 217, 87)" type="submit" value="Edit" id="<% i %>">
+                    </form>
+                    </div>
+                </div>
+                     <% } %>
+                <% } %>
+            </div>
+        </div>
+    </body>
+</html>
