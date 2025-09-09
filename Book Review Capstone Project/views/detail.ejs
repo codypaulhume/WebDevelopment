@@ -1,0 +1,48 @@
+<%- include('partials/header.ejs'); -%>
+    <div class="bookInfoDetail">
+        <div id="detailTop">
+            <img src="<%= book[0].url %>" alt="book_cover">
+        <form id="bookInfoForm" action="/edit" method="post">    
+            <input type="hidden" name="isbnValue" value="<%=book[0].isbn%>">
+            <h1>
+                <%= book[0].title %>
+            </h1>
+            <h4>Date completed: <%= book[0].date_completed %></h4>
+            <h4>Genre: <%= book[0].genre %>
+            </h4>
+
+            <h4 id="newRating<%= book[0].isbn %>"  hidden="true"><input type="number" name="updatedRating"
+                    value="<%= book[0].rating %>" autocomplete="off" autofocus="true" min="1" max="10">/10</h4>
+            <h4 id="currentRating<%= book[0].isbn %>">Rating: <%= book[0].rating %>/10</h4>
+            </div>
+            <h1>Review</h1>
+            <hr>
+            <p id="currentReview<%= book[0].isbn %>" class="reviewBottom"><%= book[0].review %></p>
+            <textarea name="updatedReview" id="newReview<%= book[0].isbn %>" class="reviewBottom textBox" autocomplete="off" autofocus="true" hidden="true"><%= book[0].review %></textarea>
+            <br>
+            <input id="doneButton" type="submit" name="submitDone" value="Done" hidden="true">
+            
+            
+        </form>
+            <button id="edit<%= book[0].isbn %>" class="commonButtons" type="button" onclick="handler('<%= book[0].isbn %>')">Edit</button>
+        <form action="/delete" method="post">
+            <input type="hidden" name="isbnValue" value="<%=book[0].isbn%>">
+            <input id="doneButton" class="commonButtons" style="background-color: rgb(119, 3, 3); color: white;" type="submit" name="submitDone" value="Delete">
+        </form>
+    </div>
+
+    <script>
+        function handler(isbn) {
+            document.getElementById("newReview" + isbn).removeAttribute("hidden")
+            document.getElementById("currentReview" + isbn).setAttribute("hidden", true)
+            document.getElementById("newRating" + isbn).removeAttribute("hidden")
+            document.getElementById("currentRating" + isbn).setAttribute("hidden", true)
+
+            document.getElementById("doneButton").removeAttribute("hidden")
+            document.getElementById("doneButton").setAttribute("class", "commonButtons")
+            document.getElementById("edit" + isbn).setAttribute("hidden", true)
+            document.getElementById("edit" + isbn).setAttribute("class", "")
+        }
+    </script>
+
+    <%- include('partials/footer.ejs'); -%>

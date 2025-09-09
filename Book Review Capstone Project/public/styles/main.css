@@ -1,0 +1,109 @@
+body{
+    background-color: black;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+img{
+    border-style: double;
+}
+hr{
+    margin-bottom: 25px;
+}
+#headerDiv{
+    display: flex;
+    justify-content: space-between;
+}
+
+#title{
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+#headerButtonDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+#homePage{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.bookInfo{
+    border-radius: 5px;
+    background: #ffffff;
+    /*background: #dad604; */
+    padding: 20px;
+    align-items: center;
+    margin: 25px;
+}
+.bookInfoDetail{
+    border-radius: 5px;
+    background: #ffffff;
+    padding: 20px;
+    margin: 25px;
+}
+.buttons {
+    background-color: #fd5e5e;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 20px;
+    margin: 4px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 150px;
+}
+
+.commonButtons{
+    background-color: white;
+    border: solid black;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 186px;
+}
+#detailTop{
+    display: inline-flex;
+}
+#bookInfoForm{
+    margin: 25px;
+}
+.reviewBottom{
+    background-color: rgb(252, 228, 228);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 25px;
+    font-size: larger;
+}
+
+.textBox{
+    width: 80%;
+}
+
+.flexForMe{
+    display: flex;
+}
+
+.addBook{
+    display: block;
+}
+#error{
+    color: red;
+}
+.buttons:hover {background-color: white; color: black;}
+.commonButtons:hover {background-color: black; color: white;}

@@ -1,0 +1,31 @@
+<%- include('partials/header.ejs'); -%>
+    <form action="/sort" method="post">
+        <select class="reviewBottom" name="sortBy">
+            <option value=""><b>Sort By:</b> Recently added</option>
+            <option value="WHERE genre = 'Fiction'">Fiction</option>
+            <option value="WHERE genre = 'Non-Fiction'">Non-Fiction</option>
+            <option value="WHERE genre = 'Mystery/Thriller'">Mystery/Thriller</option>
+            <option value="WHERE genre = 'Fantasy/Sci-Fi'">Fantasy/Sci-Fi</option>
+            <option value="WHERE genre = 'Classic'">Classic</option>
+            <option value="ORDER BY rating ASC">Rating: Ascending</option>
+            <option value="ORDER BY rating DESC">Rating: Decending</option>
+        </select>
+        <input type="submit" class="commonButtons" name="submitValue" value="Sort">
+    </form>
+    <br>
+    <!-- Iterate through each item passed in from the server. We are iterating through an array-->
+     <div id="homePage">
+    <% for(let bookInfo of book){%>
+        <div class = "bookInfo" style="width: 186px;">   
+            <!-- The problem before was that I had line 26 (< } %>) inside the form. It is now fixed and sits outside the form. --> 
+            <h2><%= bookInfo.title %></h2>   
+            <form action="/detail" method="post">
+                <input type="hidden" name="isbnValue" value="<%=bookInfo.isbn%>">
+                <img src="<%= bookInfo.url %>" alt="book_cover">
+                <h4>Rating: <%= bookInfo.rating%>/10</h4>
+                <input type="submit" class="commonButtons" name="submitValue" value="Read review">
+            </form>
+        </div>    
+    <% } %>
+    </div>
+<%- include('partials/footer.ejs'); -%>

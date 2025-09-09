@@ -1,0 +1,32 @@
+<%- include('partials/header.ejs'); -%>
+    <div class="bookInfo addBook">
+        <form action="/add" method="post" class="addBook">
+            <h3 id = "error"><%=error%></h3><br>
+            <div class="flexForMe">
+                <h2>Title</h2><br>
+                <input class="reviewBottom" type="text" name="title">
+                <h2>ISBN</h2><br>
+                <input class="reviewBottom" type="text" name="isbn"><br>
+            </div>
+            <div class="flexForMe">
+                <h2>Date completed</h2>
+                <input class="reviewBottom" type="date" name="date_completed">
+                <h2>Rating (between 1 and 10):</h2>
+                <input class="reviewBottom" type="number" name="rating" min="1" max="10">
+                <h2>Genre:</h2>
+                <select class="reviewBottom" name="genre">
+                    <option value="Fiction">Fiction</option>
+                    <option value="Non-Fiction">Non-Fiction</option>
+                    <option value="Mystery/Thriller">Mystery/Thriller</option>
+                    <option value="Fantasy/Sci-Fi">Fantasy/Sci-Fi</option>
+                    <option value="Classic">Classic</option>
+                </select>
+            </div>
+            <br>
+            <h2>Review</h2>
+            <textarea class="reviewBottom textBox" name="review"></textarea><br>
+
+            <input class="commonButtons" type="submit" name="doneButton" value="Done">
+        </form>
+    </div>
+    <%- include('partials/footer.ejs'); -%>
