@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+    <div>
+        <div class="flexForMe">
+            <h1>
+                Register Here
+            </h1>
+        </div>
+        <div class="flexForMe">
+            <form action="/register" method="POST">
+                <input type="text" id="fname" name="email" placeholder="Enter your email"><br>
+                <input type="text" id="lname" name="password" placeholder="Enter your password">
+                <div class="flexForMe">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>

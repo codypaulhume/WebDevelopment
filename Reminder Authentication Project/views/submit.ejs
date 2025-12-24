@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+    <div>
+        <div class="flexForMe">
+            <h1>Submit reminder here!</h1>
+        </div>
+        <div class="flexForMe">
+            <form action="/submit" method="POST">
+                <input type="text" name="newReminder" placeholder="Enter your reminder"><br><br>
+                <div class="flexForMe">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>
