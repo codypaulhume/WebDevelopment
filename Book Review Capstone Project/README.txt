@@ -11,4 +11,5 @@ I took design inspiration from the Rijksmuseum. I was planning my first solo tri
 2. Setup the database in PGAdmin. 
   * Email me for the details codypaulhume@gmail.com
 3. Change the database password to match.
-4. Run "index.js"
+4. Run "nodemon index.js"
+5. In web browser: localhost:3000
